@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Portofolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="browser-ui">
+        <div class="browser-header">
+            <div class="browser-dots">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="address-bar">
+                <span class="arrow">←</span>
+                <span class="arrow">→</span>
+                <span class="refresh">↻</span>
+                <span class="url">www.alfan.com</span>
+            </div>
+        </div>
+
+        <div class="website-content">
+            <header>
+                <div class="logo">
+                    <div class="logo-circle">A</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#hero" class="nav-link">Home</a></li>
+                        <li><a href="#achievements" class="nav-link">Achievement</a></li>
+                        <li><a href="#contact" class="nav-link">Message Us</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <section class="hero" id="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Fikri Alfan Alfianto</h1>
+                        <p>Great is the art of beginning
+                            <br>
+                            But greater is the art of ending
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        
+                    </div>
+                </div>
+            </section>
+
+            <section class="achievements" id="achievements">
+                <h2>Our Achievements</h2>
+                <div class="achievements-list">
+                    <div class="achievement">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>Best Design Award</h3>
+                        <p>Web Design Competition 2024</p>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">🥇</div>
+                        <h3>First Place</h3>
+                        <p>National Coding Championship</p>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">🌟</div>
+                        <h3>5-Star Rating</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact" id="contact">
+                <h2>Message Us</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 Alfan Portfolio. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

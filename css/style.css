@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* Browser UI */
+.browser-ui {
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    position: relative; /* Add this to establish a positioning context */
+}
+
+/* Make browser-header sticky */
+.browser-header {
+    position: sticky;
+    z-index: 1001;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+
+.browser-dots {
+    display: flex;
+    margin-right: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+    background-color: #ccc;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.address-bar {
+    flex: 1;
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.arrow, .refresh {
+    color: #999;
+    margin: 0 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.url {
+    color: #333;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* Website Content */
+.website-content {
+    padding: 0;
+    position: relative;
+}
+
+/* Logo and Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 40px; /* Height of the browser header */
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #266bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav a.active {
+    background-color: #ff7675;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 40px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.hero p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.counter {
+    color: #2980b9;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 120px;
+}
+
+.hero-image {
+    width: 300px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.hero-text p {
+    color: #555;
+}
+
+/* Achievements Section */
+.achievements {
+    padding: 60px 40px;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.achievements h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #000;
+    text-align: center;
+}
+
+.achievements-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.achievement {
+    text-align: center;
+    width: 30%;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.achievement h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.achievement p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 40px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #000;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #ff7675;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e84a5f;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .profile-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image {
+        margin-bottom: 30px;
+    }
+    
+    .facility {
+        width: 45%;
+    }
+    
+    .achievement {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .browser-dots {
+        margin-right: 10px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    nav {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    nav li {
+        margin: 5px;
+    }
+    
+    .hero {
+        padding: 50px 20px;
+    }
+    
+    .facilities {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .facility {
+        width: 80%;
+    }
+    
+    .achievement {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .address-bar {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .facility-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .contact {
+        padding: 40px 20px;
+    }
+}
