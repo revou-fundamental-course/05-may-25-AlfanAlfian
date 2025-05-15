@@ -10,7 +10,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Browser UI */
 .browser-ui {
     max-width: 1200px;
     margin: 20px auto;
@@ -19,10 +18,9 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
-    position: relative; /* Add this to establish a positioning context */
+    position: relative;
 }
 
-/* Make browser-header sticky */
 .browser-header {
     position: sticky;
     z-index: 1001;
@@ -32,7 +30,6 @@ body {
     display: flex;
     align-items: center;
 }
-
 
 .browser-dots {
     display: flex;
@@ -73,21 +70,19 @@ body {
     font-size: 14px;
 }
 
-/* Website Content */
 .website-content {
     padding: 0;
     position: relative;
 }
 
-/* Logo and Navigation */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px 90px;
     border-bottom: 1px solid #eee;
     position: sticky;
-    top: 40px; /* Height of the browser header */
+    top: 40px;
     z-index: 1000;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -137,7 +132,6 @@ nav a.active {
     color: white;
 }
 
-/* Hero Section */
 .hero {
     padding: 80px 40px;
     text-align: left;
@@ -182,67 +176,99 @@ nav a.active {
     background-color: #f0f0f0;
     border-radius: 10px;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+.hero-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.hero-image img.active {
+    opacity: 1;
 }
 
 .hero-text p {
     color: #555;
 }
 
-/* Achievements Section */
-.achievements {
-    padding: 60px 40px;
-    background-color: white;
-    border-bottom: 1px solid #eee;
-}
+.packages {
+            padding: 70px 40px;
+            background-color: white;
+            border-bottom: 1px solid #eee;
+        }
 
-.achievements h2 {
-    font-size: 24px;
-    margin-bottom: 40px;
-    color: #000;
-    text-align: center;
-}
+        .packages h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 50px;
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
 
-.achievements-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-}
+        .packages h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #266bff;
+            border-radius: 3px;
+        }
 
-.achievement {
-    text-align: center;
-    width: 30%;
-    margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .packages-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-.achievement:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
+        .package {
+            background-color: #f9f9f9;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 240px;
+        }
 
-.achievement-icon {
-    font-size: 36px;
-    margin-bottom: 15px;
-}
+        .package:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
 
-.achievement h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-}
+        .package img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
 
-.achievement p {
-    font-size: 14px;
-    color: #666;
-}
+        .package:hover img {
+            transform: scale(1.1);
+        }
 
-/* Contact Section */
+        .package p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+
 .contact {
     padding: 60px 40px;
     background-color: #f9f9f9;
@@ -301,7 +327,6 @@ nav a.active {
     background-color: #e84a5f;
 }
 
-/* Footer */
 footer {
     padding: 20px;
     text-align: center;
@@ -313,7 +338,6 @@ footer p {
     font-size: 14px;
 }
 
-/* Responsive Design */
 @media (max-width: 900px) {
     .profile-content {
         flex-direction: column;
@@ -334,72 +358,118 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .browser-dots {
-        margin-right: 10px;
-    }
-    
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
-    
-    header {
-        flex-direction: column;
-        padding: 15px;
-    }
-    
-    nav {
-        margin-top: 15px;
-        width: 100%;
-    }
-    
-    nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    nav li {
-        margin: 5px;
-    }
-    
     .hero {
-        padding: 50px 20px;
-    }
-    
-    .facilities {
+        padding: 30px 20px;
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
-    
-    .facility {
-        width: 80%;
+
+    .hero-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.hero-image img.active {
+    opacity: 1;
+}
+
+    .hero-content {
+        flex-direction: column;
+        padding: 0;
     }
-    
-    .achievement {
-        width: 80%;
+
+    .hero-image {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .packages-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+    .package {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .address-bar {
-        display: none;
+    .hero {
+        padding: 20px 10px;
     }
-    
+
+    .hero-image {
+        width: 150px;
+        height: 150px;
+    }
+.hero-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.hero-image img.active {
+    opacity: 1;
+}
+
     .hero h1 {
-        font-size: 28px;
+        font-size: 20px;
     }
-    
-    .facility-circle {
-        width: 120px;
-        height: 120px;
+
+    .hero p {
+        font-size: 12px;
     }
-    
-    .profile-image {
-        width: 250px;
-        height: 250px;
+
+    header {
+        align-items: center;
     }
-    
-    .contact {
-        padding: 40px 20px;
+
+    nav ul {
+        align-items: center;
     }
+
+    .packages {
+                padding: 50px 20px;
+            }
+            
+            .packages-list {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+                margin: 0 auto;
+                gap: 20px;
+            }
+            
+            .package {
+                min-height: 200px;
+                padding: 25px 15px;
+            }
+            
+            .package img {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+            
+            .package p {
+                font-size: 14px;
+            }
 }

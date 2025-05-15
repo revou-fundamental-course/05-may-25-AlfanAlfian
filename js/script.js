@@ -33,7 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        
+        // Highlight the active link in the navigation
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === current) {
+                link.classList.add('active');
+            }
+        });
     });
     
     const refreshButton = document.querySelector('.refresh');
@@ -65,5 +71,23 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
-    
+
+    const slides = document.querySelectorAll('.hero-image .slide');
+    let currentSlide = 0;
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+        showSlide(currentSlide);
+    }
+    // Show the first slide initially
+    showSlide(currentSlide);
+    // Change slide every 3 seconds
+    setInterval(nextSlide, 3000);
 });
